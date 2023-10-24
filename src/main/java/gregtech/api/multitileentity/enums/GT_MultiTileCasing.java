@@ -19,8 +19,7 @@ public enum GT_MultiTileCasing {
     LaserEngraverUpgrade2(8),
     LaserEngraverUpgrade3(9),
     LaserEngraverUpgrade4(10),
-	RuneFactory(899),
-	BotanicCasing(900),
+    BotanicCasing(11),
     NONE(GT_Values.W);
 
     private final int meta;

@@ -10,7 +10,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.Mods;
 import gregtech.api.multitileentity.MultiTileEntityBlock;
 import gregtech.api.multitileentity.MultiTileEntityRegistry;
 import gregtech.api.multitileentity.multiblock.base.WallShareablePart;
@@ -71,9 +70,11 @@ public class GT_Loader_MultiTileEntities implements Runnable {
 
     @Override
     public void run() {
-        if (Mods.NewHorizonsCoreMod.isModLoaded()) {
-            return;
-        }
+        // Uncomment to disable mutes
+        //
+        // if (Mods.NewHorizonsCoreMod.isModLoaded()) {
+        // return;
+        // }
         GT_FML_LOGGER.info("GT_Mod: Registering MultiTileEntities");
         registerMachines();
         registerCasings();
@@ -138,11 +139,11 @@ public class GT_Loader_MultiTileEntities implements Runnable {
             .outputInventorySize(16)
             .tankCapacity(128000L)
             .register();
-		MACHINE_REGISTRY.create(899, RuneFactory.class)
-			.name("Rune Factory")
-			.category("Multiblock Controller")
+        MACHINE_REGISTRY.create(444, RuneFactory.class)
+            .name("Rune Factory")
+            .category("Multiblock Controller")
             .setBlock(MACHINE_BLOCK)
-            .textureFolder("RuneFactory")
+            .textureFolder("runeFactory")
             .inputInventorySize(16)
             .outputInventorySize(16)
             .register();
@@ -217,11 +218,11 @@ public class GT_Loader_MultiTileEntities implements Runnable {
             .setBlock(CASING_BLOCK)
             .textureFolder("laserengraverupgrade4")
             .register();
-		CASING_REGISTRY.create(BotanicCasing.getId(), BasicCasing.class)
+        CASING_REGISTRY.create(BotanicCasing.getId(), BasicCasing.class)
             .name("Botanic Casing")
             .category("MultiBlock Casing")
             .setBlock(CASING_BLOCK)
-            .textureFolder("BotanicCasing")
+            .textureFolder("botanicCasing")
             .register();
 
     }
