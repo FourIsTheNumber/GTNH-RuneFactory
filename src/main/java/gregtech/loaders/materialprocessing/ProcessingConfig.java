@@ -1,0 +1,83 @@
+package gregtech.loaders.materialprocessing;
+
+import gregtech.api.enums.GTNH_ExtraMaterials;
+import gregtech.api.enums.Materials;
+
+public class ProcessingConfig implements gregtech.api.interfaces.IMaterialHandler {
+
+    public ProcessingConfig() {
+        new GTNH_ExtraMaterials();
+        Materials.add(this);
+    }
+
+    /**
+     * To add a new material, please see the following example:
+     * <blockquote>
+     * 
+     * <pre>
+     * int numberOfMaterialSlots = GregTech_API.sMaterialProperties.get("general", "AmountOfCustomMaterialSlots", 16);
+     * for (int i = 0; i < numberOfMaterialSlots; i++) {
+     *     String aID = (i < 10 ? "0" : "") + i;
+     *     new Materials(
+     *         -1,
+     *         TextureSet.SET_METALLIC,
+     *         1.0F,
+     *         0,
+     *         0,
+     *         0,
+     *         255,
+     *         255,
+     *         255,
+     *         0,
+     *         "CustomMat" + aID,
+     *         "CustomMat" + aID,
+     *         0,
+     *         0,
+     *         0,
+     *         0,
+     *         false,
+     *         false,
+     *         1,
+     *         1,
+     *         1,
+     *         Dyes._NULL,
+     *         "custom",
+     *         true,
+     *         aID);
+     * }
+     * </pre>
+     * 
+     * </blockquote>
+     */
+    @SuppressWarnings("unused")
+    @Override
+    public void onMaterialsInit() {}
+
+    @Override
+    public void onComponentInit() {
+        // This is left here as an example of how to add components.
+        // TODO: convert the example to a javadoc
+        /*
+         * Enabling specific components: OrePrefixes.spring.enableComponent(Materials.Cobalt);
+         * OrePrefixes.ingotDouble.enableComponent(Materials.Cobalt);
+         * OrePrefixes.ingotTriple.enableComponent(Materials.Cobalt);
+         * OrePrefixes.ingotQuadruple.enableComponent(Materials.Cobalt);
+         * OrePrefixes.ingotQuintuple.enableComponent(Materials.Cobalt);
+         * OrePrefixes.plateDouble.enableComponent(Materials.Cobalt);
+         * OrePrefixes.plateTriple.enableComponent(Materials.Cobalt);
+         * OrePrefixes.plateQuadruple.enableComponent(Materials.Cobalt);
+         * OrePrefixes.plateQuintuple.enableComponent(Materials.Cobalt);
+         * OrePrefixes.plateDense.enableComponent(Materials.Cobalt);
+         */
+    }
+
+    @Override
+    public void onComponentIteration(Materials aMaterial) {
+        // This is left here as an example of how to add components.
+        // TODO: convert the example to a javadoc
+        /*
+         * Enabling/Disabling components depending on the current Materials values: if ((aMaterial.mTypes & 0x40) != 0)
+         * { //This material can be made into tool heads OrePrefixes.plateQuadruple.mDisabledItems.remove(aMaterial); }
+         */
+    }
+}
