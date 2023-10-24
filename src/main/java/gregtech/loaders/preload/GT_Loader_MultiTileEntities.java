@@ -37,6 +37,7 @@ import gregtech.common.tileentities.machines.multiblock.DistillationTower;
 import gregtech.common.tileentities.machines.multiblock.LaserEngraver;
 import gregtech.common.tileentities.machines.multiblock.LayeredCokeBattery;
 import gregtech.common.tileentities.machines.multiblock.Macerator;
+import gregtech.common.tileentities.machines.multiblock.RuneFactory;
 
 public class GT_Loader_MultiTileEntities implements Runnable {
 
@@ -137,6 +138,14 @@ public class GT_Loader_MultiTileEntities implements Runnable {
             .outputInventorySize(16)
             .tankCapacity(128000L)
             .register();
+		MACHINE_REGISTRY.create(899, RuneFactory.class)
+			.name("Rune Factory")
+			.category("Multiblock Controller")
+            .setBlock(MACHINE_BLOCK)
+            .textureFolder("RuneFactory")
+            .inputInventorySize(16)
+            .outputInventorySize(16)
+            .register();
     }
 
     private static void registerCasings() {
@@ -207,6 +216,12 @@ public class GT_Loader_MultiTileEntities implements Runnable {
             .category("MultiBlock Casing")
             .setBlock(CASING_BLOCK)
             .textureFolder("laserengraverupgrade4")
+            .register();
+		CASING_REGISTRY.create(BotanicCasing.getId(), BasicCasing.class)
+            .name("Botanic Casing")
+            .category("MultiBlock Casing")
+            .setBlock(CASING_BLOCK)
+            .textureFolder("BotanicCasing")
             .register();
 
     }
